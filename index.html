@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8c2f6783dc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="./images/logo.png" alt="logo" class="logo">
+                <ul id="sidemenu">
+                    
+                    <li> <a href="#header">Home</a></li>
+                    <li> <a href="#about">About</a></li>
+                    <li> <a href="#portfolio">Portfolio</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                    
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+            <p>Front End Developer</p>
+            <h1>Hi, I'm <span>Federico</span><br>From Argentina</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ------about-------  -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./images/user.png" alt="user.png">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About Me</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non porro consectetur distinctio enim praesentium? Ratione quos voluptatibus, corrupti, iusto quam suscipit id obcaecati quae natus modi, tenetur nobis quas ex.</p>
+               
+
+                <div class="tab-tiles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Html / Css / Bootstrap</li>
+                        <li><span>Javascript Develompent</span><br>Javascript</li>
+                        <li><span>Library</span><br>React Js</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Freelance</span><br>Web Development</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022</span><br>Web Development at CoderHouse</li>
+                        <li><span>2022</span><br>Javascript Develompent at CoderHouse</li>
+                        <li><span>2022 - Current </span><br>React Js</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------- portfolio ------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h2 class="sub-title">My Work</h2>
+            <div class="work-list">
+                <div class="work">
+                    <img src="./images/work-1.png" alt="work">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>Bla bla bla bla bla bla bla bla bla lba lbab lbalbalba blablal</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./images/work-2.png" alt="work">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>Bla bla bla bla bla bla bla bla bla lba lbab lbalbalba blablal</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./images/work-3.png" alt="work">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>Bla bla bla bla bla bla bla bla bla lba lbab lbalbalba blablal</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!-- ----------contact---------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h2 class="sub-title">Contact Me</h2>
+                    <p><i class="fa-solid fa-paper-plane"></i> contact@example.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>+543329666666</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/federico-sagini-76a984182/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="./my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Federico Sagini 2022</p>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let tablinks = document.getElementsByClassName("tab-links");
+        let tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+
+        let sidemenu = document.getElementById("sidemenu")
+        
+        function openmenu(){
+            sidemenu.style.right = "0"
+            
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px"
+
+        }
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxKoI9LOk7hEMY1P1saxYZ3DU534T0SWAMFcf9xOppgE5WbBA8oEgiz1s9F6eVCCgWtaQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{msg.innerHTML = "Message sent succesfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },4000)
+            form.reset
+        } )
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
